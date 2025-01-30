@@ -11,6 +11,7 @@ import '../../../config/utils/my_strings.dart';
 import '../../../config/utils/style.dart';
 import '../../components/app-bar/custom_appbar.dart';
 import '../../components/warning_aleart_dialog.dart';
+
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
@@ -20,7 +21,7 @@ class MenuScreen extends StatelessWidget {
       backgroundColor: MyColor.colorLightGrey,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(MyStrings.myMenu.tr,style: titleText,),
+        title: Text(MyStrings.myMenu.tr, style: titleText),
         automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
@@ -37,17 +38,49 @@ class MenuScreen extends StatelessWidget {
                     iconSize: 25,
                     onPressed: () => Get.toNamed(RouteHelper.profileScreen),
                   ),
-                  // MenuRowWidget(
-                  //   image: MyImages.lock,
-                  //   label: MyStrings.changePassword.tr,
-                  //   onPressed: () => Get.toNamed(RouteHelper.changePasswordScreen),
-                  // ),
+                  MenuRowWidget(
+                    image: MyImages.lock,
+                    label: MyStrings.changePassword.tr,
+                    onPressed: () => Get.toNamed(RouteHelper.changePasswordScreen),
+                  ),
                 ],
-              )
+              ),
             ),
-
             const SizedBox(height: Dimensions.space15),
-
+            MenuCard(
+              child: Column(
+                children: [
+                  MenuRowWidget(
+                    image: MyImages.ticket,
+                    label: MyStrings.couponCode,
+                    onPressed: () => Get.toNamed(RouteHelper.couponCodeScreen),
+                  ),
+                  MenuRowWidget(
+                    image: MyImages.orderLog,
+                    label: MyStrings.orderHistory,
+                    onPressed: () => Get.toNamed(RouteHelper.myOrderScreen),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: Dimensions.space15),
+            MenuCard(
+              child: Column(
+                children: [
+                  MenuRowWidget(
+                    image: MyImages.notification,
+                    label: MyStrings.myNotification.tr,
+                    onPressed: () => Get.toNamed(RouteHelper.notificationScreen),
+                  ),
+                  MenuRowWidget(
+                    image: MyImages.myReview,
+                    label: MyStrings.myReview,
+                    onPressed: () => Get.toNamed(RouteHelper.myReviewScreen),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: Dimensions.space15),
             MenuCard(
               child: Column(
                 children: [
@@ -56,51 +89,11 @@ class MenuScreen extends StatelessWidget {
                     label: MyStrings.language.tr,
                     onPressed: () => Get.toNamed(RouteHelper.languageScreen),
                   ),
-            //       MenuRowWidget(
-            //         image: MyImages.ticket,
-            //         label: MyStrings.couponCode,
-            //         onPressed: () => Get.toNamed(RouteHelper.couponCodeScreen),
-            //       ),
                   MenuRowWidget(
                     image: MyImages.paymentLog,
                     label: MyStrings.paymentHistory,
                     onPressed: () => Get.toNamed(RouteHelper.paymentLogScreen),
                   ),
-                  
-                  MenuRowWidget(
-                    image: MyImages.myReview,
-                    label: MyStrings.about,
-                    onPressed: () => Get.toNamed(""),
-                  ),
-            //       MenuRowWidget(
-            //         image: MyImages.orderLog,
-            //         label: MyStrings.orderHistory,
-            //         onPressed: () => Get.toNamed(RouteHelper.myOrderScreen),
-            //       ),
-            //       MenuRowWidget(
-            //         image: MyImages.language,
-            //         label: MyStrings.language.tr,
-            //         onPressed: () => Get.toNamed(RouteHelper.languageScreen),
-            //       ),
-            //       MenuRowWidget(
-            //         image: MyImages.notification,
-            //         label: MyStrings.myNotification.tr,
-            //         onPressed: () => Get.toNamed(RouteHelper.notificationScreen),
-            //       ),
-                  // MenuRowWidget(
-                  //   image: MyImages.myReview,
-                  //   label: MyStrings.myReview,
-                  //   onPressed: () => Get.toNamed(RouteHelper.myReviewScreen),
-                  // ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: Dimensions.space15),
-
-            MenuCard(
-              child: Column(
-                children: [
                   MenuRowWidget(
                     image: MyImages.faq,
                     label: MyStrings.faq.tr,
@@ -116,8 +109,8 @@ class MenuScreen extends StatelessWidget {
                     label: MyStrings.deleteAccount,
                     onPressed: () {
                       const WarningAlertDialog().warningAlertDialog(
-                      isDelete: true,
-                      context, () {Get.offAllNamed(RouteHelper.loginScreen);});
+                        isDelete: true,
+                        context, () {Get.offAllNamed(RouteHelper.loginScreen);});
                     },
                   ),
                 ],
