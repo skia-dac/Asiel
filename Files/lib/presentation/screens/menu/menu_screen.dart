@@ -29,6 +29,7 @@ class MenuScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Account Section
             MenuCard(
               child: Column(
                 children: [
@@ -47,6 +48,10 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: Dimensions.space15),
+            Divider(),
+            const SizedBox(height: Dimensions.space15),
+
+            // Order Section
             MenuCard(
               child: Column(
                 children: [
@@ -64,6 +69,10 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: Dimensions.space15),
+            Divider(),
+            const SizedBox(height: Dimensions.space15),
+
+            // Notification Section
             MenuCard(
               child: Column(
                 children: [
@@ -81,6 +90,10 @@ class MenuScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: Dimensions.space15),
+            Divider(),
+            const SizedBox(height: Dimensions.space15),
+
+            // Settings Section
             MenuCard(
               child: Column(
                 children: [
