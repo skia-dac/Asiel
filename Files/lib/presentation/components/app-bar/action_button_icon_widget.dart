@@ -9,7 +9,6 @@ import 'package:ShapeCom/domain/controller/cart_controller/cartController.dart';
 import '../../../config/utils/style.dart';
 
 class ActionButtonIconWidget extends StatelessWidget {
-
   final Color backgroundColor;
   final Color iconColor;
   final VoidCallback? pressed;
@@ -38,29 +37,40 @@ class ActionButtonIconWidget extends StatelessWidget {
     return GestureDetector(
       onTap: pressed,
       child: Container(
-        height: size, width: size,
+        height: size,
+        width: size,
         alignment: Alignment.center,
-        padding: EdgeInsets.all(isLoading?5:0),
+        padding: EdgeInsets.all(isLoading ? 5 : 0),
         margin: EdgeInsets.only(right: spacing),
-        child: isLoading? SizedBox(height:size/2,width:size/2,child: const CircularProgressIndicator(color: MyColor.primaryColor)) : isImage ? imageSrc == MyImages.card ? badges.Badge(
-          showBadge: true,
-          badgeStyle: const badges.BadgeStyle(
-            shape: badges.BadgeShape.circle,
-            badgeColor: Colors.white,
-            padding: EdgeInsets.all(5),
-            elevation: 0,
-          ),
-          badgeContent: Text(Get.find<CartCountController>().cartCount.toString(),style: regularSmall.copyWith(fontSize: 8,color: MyColor.colorRed),),
-          child: SvgPicture.asset(imageSrc ?? "",width: 20,height: 20,),
-        ) : SvgPicture.asset(
-          imageSrc!,
-          height: 20,
-          width: 20
-        ) : Icon(
-          icon,
-          color: iconColor,
-          size: size
-        ),
+        child: isLoading
+            ? SizedBox(
+                height: size / 2,
+                width: size / 2,
+                child: const CircularProgressIndicator(
+                    color: MyColor.primaryColor))
+            : isImage
+                ? imageSrc == MyImages.card
+                    ? badges.Badge(
+                        showBadge: true,
+                        badgeStyle: const badges.BadgeStyle(
+                          shape: badges.BadgeShape.circle,
+                          badgeColor: Colors.white,
+                          padding: EdgeInsets.all(5),
+                          elevation: 0,
+                        ),
+                        badgeContent: Text(
+                          Get.find<CartCountController>().cartCount.toString(),
+                          style: regularSmall.copyWith(
+                              fontSize: 8, color: MyColor.colorRed),
+                        ),
+                        child: SvgPicture.asset(
+                          imageSrc ?? "",
+                          width: 20,
+                          height: 20,
+                        ),
+                      )
+                    : SvgPicture.asset(imageSrc!, height: 20, width: 20)
+                : Icon(icon, color: iconColor, size: size),
       ),
     );
   }

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-class CustomNavBarIcon extends StatelessWidget {
 
+class CustomNavBarIcon extends StatelessWidget {
   final String svgImage;
 
-  const CustomNavBarIcon({
-    super.key,
-    required this.svgImage
-  });
+  const CustomNavBarIcon({super.key, required this.svgImage});
 
   @override
   Widget build(BuildContext context) {

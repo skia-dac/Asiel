@@ -9,6 +9,7 @@ import '../../../../../config/utils/my_images.dart';
 import '../../../../../config/utils/my_strings.dart';
 import '../../../../../config/utils/style.dart';
 import '../../../../components/text-form-field/custom_text_field.dart';
+
 class HomeScreenTopSection extends StatelessWidget {
   const HomeScreenTopSection({
     super.key,
@@ -20,8 +21,9 @@ class HomeScreenTopSection extends StatelessWidget {
       builder: (controller) => Container(
         decoration: const BoxDecoration(
             color: MyColor.colorWhite,
-            borderRadius:BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20))
-        ),
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20))),
         child: Column(
           children: [
             const SizedBox(height: 10),
@@ -30,30 +32,31 @@ class HomeScreenTopSection extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                    Container(
-                      height: 45,
-                      width: 45,
-                      padding: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: MyColor.primaryColor.withOpacity(.9),
-                      ),
-                      child: Image.asset(MyImages.appLogo),
+                  Container(
+                    height: 45,
+                    width: 45,
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: MyColor.primaryColor.withOpacity(.9),
                     ),
-                
+                    child: Image.asset(MyImages.appLogo),
+                  ),
                   Expanded(
                     child: Column(
                       children: [
-                        Text("Home",style: boldLarge.copyWith(color: MyColor.bodyTextColor),),
-                
+                        Text(
+                          "Home",
+                          style:
+                              boldLarge.copyWith(color: MyColor.bodyTextColor),
+                        ),
                       ],
                     ),
                   ),
-
                   GestureDetector(
-                    // onTap: () {
-                    //   Get.toNamed(RouteHelper.notificationScreen);
-                    // },
+                    onTap: () {
+                      Get.toNamed(RouteHelper.myCartScreen);
+                    },
                     child: Container(
                       height: 45,
                       width: 45,
@@ -62,7 +65,7 @@ class HomeScreenTopSection extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: MyColor.primaryColor.withOpacity(.2),
                       ),
-                      child: SvgPicture.asset(MyImages.notification),
+                      child: SvgPicture.asset(MyImages.card),
                     ),
                   ),
                 ],
@@ -82,7 +85,7 @@ class HomeScreenTopSection extends StatelessWidget {
                 validator: (value) {
                   if (value!.isEmpty) {
                     return MyStrings.enterYourUsername.tr;
-                  } else if(value.length<6){
+                  } else if (value.length < 6) {
                     return MyStrings.kShortUserNameError.tr;
                   } else {
                     return null;
