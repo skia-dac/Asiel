@@ -1,4 +1,4 @@
-name: ShapeCom
+name: shape_com
 description: A new Flutter project.
 publish_to: 'none'
 version: 1.0.0+1
@@ -47,6 +47,3 @@ flutter:
     - assets/product/mens_fashion/
     - assets/product/shoes/
     - assets/product/watch/
-
-
-
