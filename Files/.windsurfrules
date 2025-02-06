@@ -1,0 +1,101 @@
+Project Structure
+
+lib/screens/ → Screens and pages
+
+lib/widgets/ → Reusable UI components
+
+lib/utils/ → Helper functions and constants
+
+lib/services/ → API calls, database interactions
+
+assets/ → Images, fonts, and other assets
+
+Key Guidelines
+
+Separate UI components into reusable widgets for maintainability.
+
+Keep business logic separate from UI using a state management solution (Provider, Riverpod, Bloc, GetX).
+
+Organize assets properly (assets/images, assets/fonts) and use flutter_gen for asset management.
+
+Follow the SOLID principles to ensure clean and scalable architecture.
+
+Keep functions and classes small, focusing on a single responsibility.
+
+Use descriptive and meaningful variable and function names.
+
+Implement proper error handling and logging mechanisms.
+
+Best Practices
+
+Write clean, readable, and reusable code.
+
+Use const constructors whenever possible to optimize performance.
+
+Prefer SizedBox over Container when only spacing is needed.
+
+Use ThemeData instead of hardcoded colors and fonts for consistency.
+
+Leverage responsive design (MediaQuery, LayoutBuilder, FittedBox).
+
+Follow Flutter’s official linting rules (flutter analyze).
+
+UI/UX Principles
+
+Maintain consistent styling with ThemeData and custom themes.
+
+Ensure proper padding and spacing (EdgeInsets.symmetric, EdgeInsets.all).
+
+Prioritize smooth animations and transitions (AnimatedContainer, Hero, FadeTransition).
+
+Follow Material Design (Android) and Cupertino (iOS) guidelines for a native look.
+
+Ensure accessibility (Semantics, tooltip, alt text).
+
+Implement dark mode support (Brightness.dark).
+
+Performance Optimization
+
+Minimize unnecessary widget rebuilds using const.
+
+Use ListView.builder, GridView.builder, and CustomScrollView for large lists.
+
+Cache images using CachedNetworkImage to reduce network requests.
+
+Use deferred loading for large dependencies to improve app startup time.
+
+Optimize animations with AnimatedBuilder and AnimatedList.
+
+Code Maintainability
+
+Follow state management best practices:
+
+For simple apps: Provider or Riverpod
+
+For medium/complex apps: Bloc or GetX
+
+Document important functions using /// DartDoc comments.
+
+Keep widget logic minimal—use controllers or services for complex logic.
+
+Avoid unnecessary third-party packages—prefer built-in solutions.
+
+Use flutter format . to maintain consistent code style.
+
+Robust Testing
+
+
+Use golden tests to check UI consistency across devices.
+
+Handle errors gracefully using try-catch and ErrorWidget.builder.
+
+Industry Standards & Best Tools
+
+Use Flutter DevTools for debugging and performance monitoring.
+
+Keep dependencies updated and remove unused packages (flutter pub upgrade).
+
+Follow the latest Flutter updates and best practices.
+
+Use flutter_lints for consistent and reliable code quality.
+
